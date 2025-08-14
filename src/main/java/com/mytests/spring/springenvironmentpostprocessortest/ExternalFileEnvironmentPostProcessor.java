@@ -14,8 +14,12 @@ public class ExternalFileEnvironmentPostProcessor implements EnvironmentPostProc
     @Override
     public void postProcessEnvironment(ConfigurableEnvironment environment, SpringApplication application) {
         try {
+            // if the externalProperties source has the lowest priority, the external.properties file doesn't get the inlays for the overridded property:
+            //Properties properties = PropertiesLoaderUtils.loadProperties(new ClassPathResource("external.properties"));
+            // if the externalProperties source has the highest priority, the application.properties file gets the inlays for the overridded property correctly:
             Properties properties = PropertiesLoaderUtils.loadProperties(new ClassPathResource("external.properties"));
             environment.getPropertySources().addFirst(new org.springframework.core.env.PropertiesPropertySource("externalProperties", properties));
+            environment.getPropertySources().addLast(new org.springframework.core.env.PropertiesPropertySource("externalProperties", properties));
         } catch (IOException e) {
             throw new RuntimeException("Failed to load external properties", e);
         }

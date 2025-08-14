@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: spring-environmentPostProcessor-test
+
+my:
+  props:
+    first:
+      test1: value from application.yaml
+      test2: value from application.yaml
+    second:
+      test3: value from application.yaml
+      test4: value from application.yaml
+    third:
+      test5: value from application.yaml
+      test6: value from application.yaml
+    forth:
+      test7: value from application.yaml
+      test8: value from application.yaml
+    fifth:
+      test9: value from application.yaml
+      test10: value from application.yaml
+replaced:
+  key: value from application.yaml

@@ -1,0 +1,4 @@
+org.springframework.boot.env.EnvironmentPostProcessor=com.mytests.spring.springenvironmentpostprocessortest.AddEnvironmentPostProcessor,\
+  com.mytests.spring.springenvironmentpostprocessortest.OverrideEnvironmentPostProcessor,\
+  com.mytests.spring.springenvironmentpostprocessortest.AddLastEnvironmentPostProcessor,\
+  com.mytests.spring.springenvironmentpostprocessortest.ExternalFileEnvironmentPostProcessor
